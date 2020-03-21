@@ -44,12 +44,12 @@ systemctl start http
 
 #Crea la directory e mette lo script da richiamare all'avvio dal servizio
 
-wget https://github.com/mashiro2004/Motor-Slide/blob/master/init.sh
+wget https://raw.githubusercontent.com/mashiro2004/Motor-Slide/master/init.sh
 mkdir /usr/bin/rasp
 cp init.sh /usr/bin/rasp/
 
 #scarica il servizio e lo copia nella directory dei servizi
-wget https://github.com/mashiro2004/Motor-Slide/blob/master/gpio.service
+wget https://raw.githubusercontent.com/mashiro2004/Motor-Slide/master/gpio.service
 cp gpio.service /etc/systemd/system/
 
 # Fa il reload del demone e fa partire il servizio e lo setta in avvio automatico
@@ -60,9 +60,11 @@ systemctl enable gpio.service
 
 #Scarica la pagina php e la copia sotto la root dando i giusti permessi
 
-wget https://github.com/mashiro2004/Motor-Slide/blob/master/phptest.php
+wget https://raw.githubusercontent.com/mashiro2004/Motor-Slide/master/phptest.php
 cp phptest.php /var/www/html/
 chown apache:apache /var/www/html/phptest.php
+
+yum update -y
 
 #Riavvia il sistema
 reboot
