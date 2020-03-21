@@ -46,7 +46,7 @@ systemctl start http
 
 wget https://github.com/mashiro2004/Motor-Slide/blob/master/init.sh
 mkdir /usr/bin/rasp
-cp init.sh /usr/bin/rasp
+cp init.sh /usr/bin/rasp/
 
 #scarica il servizio e lo copia nella directory dei servizi
 wget https://github.com/mashiro2004/Motor-Slide/blob/master/gpio.service
