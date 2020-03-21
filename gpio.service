@@ -1,0 +1,9 @@
+[Unit]
+Description=Permessi e creazione GPIO
+After = network.target
+
+[Service]
+ExecStart=/bin/bash /usr/bin/rasp/init.sh
+
+[Install]
+WantedBy = multi-user.target
