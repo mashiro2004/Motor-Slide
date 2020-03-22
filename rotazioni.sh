@@ -1,6 +1,6 @@
 #! /bin/bash
 i=1
-scatti=10
+scatti=$2
 
 while true ; do
 echo "1 0 0 0"
