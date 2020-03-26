@@ -11,7 +11,7 @@
     <input type="text" id="sec" name="sec"><br><br>
 	<label for="lblsec">Step tra uno scatto e l'altro:</label>
     <input type="text" id="rot" name="rot"><br><br>
-	<label for="cars">Verso di rotazione:</label>
+	<label for="dir">Verso di rotazione:</label>
   <select id="dir" name="dir">
     <option value="Orario">Orario</option>
     <option value="Anti">Antiorario</option>
@@ -96,7 +96,7 @@ for($i=1; $i<=$total; $i++){
   </script>';
   
   for($t=1; $t<=$gradi; $t++){
-		if ($_POST['cars'] == "Orario")
+		if ($_POST['dir'] == "Orario")
 		{
 		$output = shell_exec('echo 1 > /sys/class/gpio/gpio24/value');
 		usleep(5);
