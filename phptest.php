@@ -40,7 +40,7 @@ $secondi = $_POST['sec'];
 $rot = $_POST['rot'];
 // DEFINISCO QUANTI STEP DEVE FAREIL MIO MOTORE PER RAGGIUNGERE 360°
 $step=512;
-$gradi = (($step * $rot) / 360); 
+$gradi = number_format((($step * $rot) / 360)); 
 
 // controllo che i campi non siano vuoti e che i campi siano numerici
 if(empty($total) or empty($secondi) or empty($rot) or !is_numeric($total) or !is_numeric($secondi) or !is_numeric($rot))
