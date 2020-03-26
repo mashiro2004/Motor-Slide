@@ -11,6 +11,11 @@
     <input type="text" id="sec" name="sec"><br><br>
 	<label for="lblsec">Gradi di rotazione tra uno scatto e l'altro:</label>
     <input type="text" id="rot" name="rot"><br><br>
+	<label for="dir">Verso di rotazione:</label>
+  <select id="dir" name="dir">
+    <option value="Orario">Orario</option>
+    <option value="Anti">Antiorario</option>
+   </select>
 	<p>
         <button name="start">Start</button>
     </p>
@@ -89,6 +94,9 @@ for($i=1; $i<=$total; $i++){
   document.getElementById("information").innerHTML="Scatto: '.$i.' di '.$total.'";
   </script>';
   
+  // Senso Orario
+  if ($_POST['dir'] == "Orario")
+		{
   for($t=1; $t<=$gradi; $t++){
 		$output = shell_exec('echo 1 > /sys/class/gpio/gpio23/value');
 		usleep(5);
@@ -103,6 +111,25 @@ for($i=1; $i<=$total; $i++){
 		usleep(5);
 		$output = shell_exec('echo 0 > /sys/class/gpio/gpio27/value');
 	}
+		}
+		else
+			// Senso Antiorario
+		{
+			for($t=1; $t<=$gradi; $t++){
+		$output = shell_exec('echo 1 > /sys/class/gpio/gpio27/value');
+		usleep(5);
+		$output = shell_exec('echo 0 > /sys/class/gpio/gpio27/value');
+		$output = shell_exec('echo 1 > /sys/class/gpio/gpio17/value');
+		usleep(5);
+		$output = shell_exec('echo 0 > /sys/class/gpio/gpio17/value');
+		$output = shell_exec('echo 1 > /sys/class/gpio/gpio24/value');
+		usleep(5);
+		$output = shell_exec('echo 0 > /sys/class/gpio/gpio24/value');
+		$output = shell_exec('echo 1 > /sys/class/gpio/gpio23/value');
+		usleep(5);
+		$output = shell_exec('echo 0 > /sys/class/gpio/gpio23/value');
+		}
+		}
   
   // Chiude il relé e lo riapre
   
