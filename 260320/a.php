@@ -31,6 +31,7 @@
 <div id="progress" style="width:500px;border:1px solid #ccc;"></div>
 <!-- Stato del progresso -->
 <div id="information" style="width"></div>
+<a href="welcome.html"></br></br>Torna alla home </br></br></a>
 </form>
   </div>
 </div>
