@@ -64,6 +64,11 @@ wget https://raw.githubusercontent.com/mashiro2004/Motor-Slide/master/phptest.ph
 cp phptest.php /var/www/html/
 chown apache:apache /var/www/html/phptest.php
 
+#Da i permessi a apache di spegnere e/o riavviare il server
+
+touch /etc/sudoers.d/sudoers
+echo apache ALL=NOPASSWD: /sbin/halt, /sbin/reboot, /sbin/poweroff >> /etc/sudoers.d/sudoers
+
 yum update -y
 
 #Riavvia il sistema
